@@ -111,32 +111,34 @@
     <section class="section" id="avantages">
       <h2>Pourquoi ce Grimoire est magique</h2>
       <ul>
-        <li><strong>Vision Enchantée :</strong> Voyage instantané vers ta meilleure version grâce au bilan 360°, comme une boule de cristal pour ton avenir.</li>
-        <li><strong>Sorcellerie Quotidienne :</strong> Rituel de journaling guidé qui sort ton potentiel du grimoire et le matérialise dans ta vie.</li>
-        <li><strong>Sortilèges Hebdo :</strong> Feuille de route ensorcelée pour transformer tes objectifs flous en actions magiques.</li>
-        <li><strong>Potion Mensuelle :</strong> Table ronde de célébration, ajustements et potions de succès pour transformer chaque victoire en étincelle.</li>
-        <li><strong>Festivités Interactives :</strong> Confettis et animations ludiques pour fêter chaque avancée comme un grand sabbat de réussite !</li>
+        <li><strong>Vision Enchantée :</strong> Voyage instantané vers ta meilleure version grâce au bilan 360°.</li>
+        <li><strong>Sorcellerie Quotidienne :</strong> Rituel de journaling guidé pour matérialiser ton potentiel.</li>
+        <li><strong>Sortilèges Hebdo :</strong> Feuille de route pour transformer tes objectifs en actions concrètes.</li>
+        <li><strong>Potion Mensuelle :</strong> Célèbre tes victoires et ajuste ta potion du succès.</li>
+        <li><strong>Festivités Interactives :</strong> Confettis et animations pour fêter chaque avancée.</li>
       </ul>
     </section>
     <section class="section" id="bilan">
       <h2>Bilan 360°</h2>
       <table>
         <tr><th>Axe</th><th>État actuel</th><th>Vision (6 mois)</th></tr>
-        <tr><td>Vie personnelle</td><td><textarea rows="3"></textarea></td><td><textarea rows="3"></textarea></td></tr>
-        <tr><td>Carrière/Pro</td><td><textarea rows="3"></textarea></td><td><textarea rows="3"></textarea></td></tr>
-        <tr><td>Santé & Corps</td><td><textarea rows="3"></textarea></td><td><textarea rows="3"></textarea></td></tr>
-        <tr><td>Relations</td><td><textarea rows="3"></textarea></td><td><textarea rows="3"></textarea></td></tr>
+        <tr><td>Vie personnelle</td><td><textarea id="bilan-vie" rows="3"></textarea></td><td><textarea id="vision-vie" rows="3"></textarea></td></tr>
+        <tr><td>Carrière/Pro</td><td><textarea id="bilan-pro" rows="3"></textarea></td><td><textarea id="vision-pro" rows="3"></textarea></td></tr>
+        <tr><td>Santé & Corps</td><td><textarea id="bilan-sante" rows="3"></textarea></td><td><textarea id="vision-sante" rows="3"></textarea></td></tr>
+        <tr><td>Relations</td><td><textarea id="bilan-relations" rows="3"></textarea></td><td><textarea id="vision-relations" rows="3"></textarea></td></tr>
       </table>
     </section>
     <section class="section" id="quotidien">
       <h2>Journaling Quotidien</h2>
       <div class="grid grid-2">
-        <div><label>1. Gratitude (3) :</label><textarea rows="3" placeholder="1...&#10;2...&#10;3..."></textarea></div>
-        <div><label>2. Vision du matin :</label><textarea rows="3" placeholder="Aujourd'hui, je choisis de..."></textarea></div>
-        <div><label>3. Objectif clé :</label><textarea rows="3" placeholder="Je... avant..."></textarea></div>
-        <div><label>4. État d'esprit :</label><textarea rows="3" placeholder="Je me sens..."></textarea></div>
-        <div><label>5. Petit pas :</label><input type="text" placeholder="..." /></div>
-        <div><label>6. Note soir :</label><textarea rows="3" placeholder="Ce que j'ai appris..."></textarea></div>
+        <div><label>1. Gratitude :</label><textarea id="gratitude" rows="3" placeholder="1...
+2...
+3..."></textarea></div>
+        <div><label>2. Vision du matin :</label><textarea id="vision-matin" rows="3" placeholder="Aujourd'hui, je choisis de..."></textarea></div>
+        <div><label>3. Objectif clé :</label><textarea id="objectif" rows="3" placeholder="Je... avant..."></textarea></div>
+        <div><label>4. État d'esprit :</label><textarea id="etat-esprit" rows="3" placeholder="Je me sens..."></textarea></div>
+        <div><label>5. Petit pas :</label><input id="petit-pas" type="text" placeholder="..." /></div>
+        <div><label>6. Note soir :</label><textarea id="note-soir" rows="3" placeholder="Ce que j'ai appris..."></textarea></div>
       </div>
       <button id="celebrateBtn">🎉 Célébrer</button>
     </section>
@@ -144,29 +146,40 @@
       <h2>Feuille de Route Hebdomadaire</h2>
       <table>
         <tr><th>Jour</th><th>Objectif</th><th>Tâches</th><th>Statut</th></tr>
-        <tr><td>Lundi</td><td><textarea rows="1"></textarea></td><td><textarea rows="1"></textarea></td><td></td></tr>
-        <tr><td>Mardi</td><td><textarea rows="1"></textarea></td><td><textarea rows="1"></textarea></td><td></td></tr>
-        <tr><td>Mercredi</td><td><textarea rows="1"></textarea></td><td><textarea rows="1"></textarea></td><td></td></tr>
-        <tr><td>Jeudi</td><td><textarea rows="1"></textarea></td><td><textarea rows="1"></textarea></td><td></td></tr>
-        <tr><td>Vendredi</td><td><textarea rows="1"></textarea></td><td><textarea rows="1"></textarea></td><td></td></tr>
-        <tr><td>Samedi</td><td><textarea rows="1"></textarea></td><td><textarea rows="1"></textarea></td><td></td></tr>
-        <tr><td>Dimanche</td><td><textarea rows="1"></textarea></td><td><textarea rows="1"></textarea></td><td></td></tr>
+        <tr><td>Lundi</td><td><textarea id="hebdo-lundi" rows="1"></textarea></td><td><textarea id="taches-lundi" rows="1"></textarea></td><td></td></tr>
+        <!-- Ajoute id pour chaque jour -->
       </table>
     </section>
     <section class="section" id="mensuel">
       <h2>Tableau de Bord Mensuel</h2>
       <table>
         <tr><th>Mois</th><th>Victoires</th><th>Leçons</th><th>Objectifs next</th></tr>
-        <tr><td><input type="text" placeholder="Ex: Juillet" /></td><td><textarea rows="2"></textarea></td><td><textarea rows="2"></textarea></td><td><textarea rows="2"></textarea></td></tr>
+        <tr><td><input id="mois" type="text" placeholder="Ex: Juillet" /></td><td><textarea id="victoires" rows="2"></textarea></td><td><textarea id="lecons" rows="2"></textarea></td><td><textarea id="objectifs-next" rows="2"></textarea></td></tr>
       </table>
     </section>
   </div>
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <script>
-    const sections = document.querySelectorAll('.section');
-    const obs = new IntersectionObserver(entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')), { threshold: 0.3 });
-    sections.forEach(s => obs.observe(s));
-    document.getElementById('celebrateBtn').addEventListener('click', () => confetti({ particleCount: 80, spread: 60 }));
+    // Sauvegarde et restauration avec localStorage
+    const fields = document.querySelectorAll('textarea[id], input[id]');
+    const key = 'grimoireData';
+    const saved = JSON.parse(localStorage.getItem(key) || '{}');
+    window.addEventListener('DOMContentLoaded', () => {
+      fields.forEach(f => {
+        if (saved[f.id]) f.value = saved[f.id];
+        f.addEventListener('input', () => {
+          saved[f.id] = f.value;
+          localStorage.setItem(key, JSON.stringify(saved));
+        });
+      });
+      // Animations
+      const secs = document.querySelectorAll('.section');
+      const obs = new IntersectionObserver(entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')), { threshold: 0.3 });
+      secs.forEach(s => obs.observe(s));
+      // Confetti
+      document.getElementById('celebrateBtn').addEventListener('click', () => confetti({ particleCount: 80, spread: 60 }));
+    });
   </script>
 </body>
 </html>
