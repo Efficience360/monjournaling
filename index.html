@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Routine de Changement de Vie</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ton Grimoire de Transformation</title>
   <style>
     /* Global styles */
     body, html {
@@ -12,7 +12,6 @@
       font-family: 'Poppins', sans-serif;
       height: 100%;
       overflow-x: hidden;
-      /* Multi-color animated gradient */
       background: linear-gradient(60deg, #ff8a00, #e52e71, #9b36b5, #3494e6);
       background-size: 800% 800%;
       animation: gradientBG 20s ease infinite;
@@ -25,15 +24,13 @@
       75% { background-position: 50% 0%; }
       100% { background-position: 0% 50%; }
     }
-    /* Headings with gradient text */
-    h1, h2, h3 {
+    h1, h2 {
       text-align: center;
       margin: 20px 0;
       background: linear-gradient(90deg, #ff8a00, #e52e71, #9b36b5);
-      background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
-      animation: bounceIn 1.2s ease;
+      animation: bounceIn 1s ease;
     }
     @keyframes bounceIn {
       0% { transform: scale(0.5); opacity: 0; }
@@ -46,121 +43,130 @@
       padding: 20px;
       position: relative;
     }
-    /* Vibrant particles */
-    .particle {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.7;
-      animation: float 8s infinite ease-in-out;
-    }
-    @keyframes float {
-      0% { transform: translate(0,0) scale(1); }
-      50% { transform: translate(20px,-30px) scale(1.2); }
-      100% { transform: translate(0,0) scale(1); }
+    .container p {
+      text-align:center;
+      font-size:1.2rem;
+      color:#333;
+      margin-bottom: 30px;
     }
     .section {
-      background: rgba(255,255,255,0.9);
-      border-radius: 20px;
-      padding: 30px;
-      margin: 50px 0;
-      box-shadow: 0 16px 32px rgba(0,0,0,0.2);
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      padding: 24px;
+      margin: 40px 0;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
       opacity: 0;
-      transform: translateY(60px);
-      transition: all 1s ease;
+      transform: translateY(50px);
+      transition: all 0.8s ease;
     }
     .section.visible {
       opacity: 1;
       transform: translateY(0);
     }
-    .grid { display: grid; grid-gap: 24px; }
-    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); }
+    .section ul {
+      list-style: disc inside;
+      line-height:1.6;
+      font-size:1rem;
+    }
     textarea, input {
       width: 100%;
-      padding: 14px;
-      border: 3px solid #e52e71;
-      border-radius: 16px;
-      background: #fff;
-      resize: vertical;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
       font-size: 1rem;
-      margin-top: 10px;
+      margin-top: 8px;
       transition: all 0.3s ease;
     }
     textarea:focus, input:focus {
-      border-color: #3494e6;
-      box-shadow: 0 0 12px rgba(52,148,230,0.6);
-      transform: scale(1.03);
+      border-color: #7e57c2;
+      box-shadow: 0 0 8px rgba(126,87,194,0.5);
+      transform: scale(1.02);
     }
-    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-    th, td { border: 2px solid #9b36b5; padding: 12px; text-align: left; transition: background 0.3s ease; }
+    table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
     th { background: #e1bee7; }
-    tr:hover td { background: #fce4ec; }
+    tr:hover td { background: #f3e5f5; }
     button {
       display: block;
-      margin: 40px auto;
-      padding: 16px 32px;
+      margin: 24px auto;
+      padding: 12px 24px;
       border: none;
-      border-radius: 32px;
-      font-size: 1.2rem;
+      border-radius: 24px;
+      font-size: 1rem;
       cursor: pointer;
-      background: linear-gradient(45deg, #ff8a00, #e52e71);
+      background: #7e57c2;
       color: #fff;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
     }
     button:hover {
-      background: linear-gradient(45deg, #9b36b5, #3494e6);
-      transform: translateY(-4px) scale(1.02);
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(60px); }
-      to { opacity: 1; transform: translateY(0); }
+      transform: translateY(-2px);
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Colorful particles -->
-    <div class="particle" style="width:80px;height:80px;top:15%;left:5%;background:#ff8a00;"></div>
-    <div class="particle" style="width:50px;height:50px;top:75%;left:85%;background:#e52e71;"></div>
-    <div class="particle" style="width:70px;height:70px;top:55%;left:25%;background:#9b36b5;"></div>
-    <div class="particle" style="width:40px;height:40px;top:85%;left:20%;background:#3494e6;"></div>
-    <h1>🪄 Routine de Transformation</h1>
-    <p style="text-align:center; font-size:1.2rem; color:#fff; text-shadow:0 2px 6px rgba(0,0,0,0.4);">
-      Une expérience dynamique pour réaliser tes rêves !
-    </p>
-    <!-- Bilan 360° -->
-    <section id="bilan" class="section">
+    <h1>Ton Grimoire de Transformation</h1>
+    <p>Un compagnon interactif pour passer chaque jour un pas de plus vers la vie de tes rêves</p>
+    <section class="section" id="avantages">
+      <h2>Pourquoi ce Grimoire est magique</h2>
+      <ul>
+        <li><strong>Vision Enchantée :</strong> Voyage instantané vers ta meilleure version grâce au bilan 360°, comme une boule de cristal pour ton avenir.</li>
+        <li><strong>Sorcellerie Quotidienne :</strong> Rituel de journaling guidé qui sort ton potentiel du grimoire et le matérialise dans ta vie.</li>
+        <li><strong>Sortilèges Hebdo :</strong> Feuille de route ensorcelée pour transformer tes objectifs flous en actions magiques.</li>
+        <li><strong>Potion Mensuelle :</strong> Table ronde de célébration, ajustements et potions de succès pour transformer chaque victoire en étincelle.</li>
+        <li><strong>Festivités Interactives :</strong> Confettis et animations ludiques pour fêter chaque avancée comme un grand sabbat de réussite !</li>
+      </ul>
+    </section>
+    <section class="section" id="bilan">
       <h2>Bilan 360°</h2>
       <table>
-        <tr><th>Axe</th><th>Où j’en suis aujourd’hui ?</th><th>Où je veux être dans 6 mois ?</th></tr>
+        <tr><th>Axe</th><th>État actuel</th><th>Vision (6 mois)</th></tr>
         <tr><td>Vie personnelle</td><td><textarea rows="3"></textarea></td><td><textarea rows="3"></textarea></td></tr>
-        <tr><td>Carrière / Pro</td><td><textarea rows="3"></textarea></td><td><textarea rows="3"></textarea></td></tr>
+        <tr><td>Carrière/Pro</td><td><textarea rows="3"></textarea></td><td><textarea rows="3"></textarea></td></tr>
         <tr><td>Santé & Corps</td><td><textarea rows="3"></textarea></td><td><textarea rows="3"></textarea></td></tr>
         <tr><td>Relations</td><td><textarea rows="3"></textarea></td><td><textarea rows="3"></textarea></td></tr>
       </table>
     </section>
-    <!-- Journaling Quotidien -->
-    <section id="quotidien" class="section">
+    <section class="section" id="quotidien">
       <h2>Journaling Quotidien</h2>
       <div class="grid grid-2">
-        <div><label>1. Gratitude du jour (3):</label><textarea rows="3" placeholder="1. ...
-2. ...
-3. ..."></textarea></div>
-        <div><label>2. Vision du matin:</label><textarea rows="3" placeholder="Aujourd'hui, je choisis de..."></textarea></div>
-        <div><label>3. Objectif clé (incantation SMART):</label><textarea rows="3" placeholder="Je... [Action]... avant... [Date]"></textarea></div>
-        <div><label>4. État d’esprit / Ressenti:</label><textarea rows="3" placeholder="Je me sens..., parce que..."></textarea></div>
-        <div><label>5. Petit pas du jour:</label><input type="text" placeholder="..." /></div>
-        <div><label>6. Note de fin de journée:</label><textarea rows="3" placeholder="Ce que j'ai appris...
-Ajustement pour demain..."></textarea></div>
+        <div><label>1. Gratitude (3) :</label><textarea rows="3" placeholder="1...&#10;2...&#10;3..."></textarea></div>
+        <div><label>2. Vision du matin :</label><textarea rows="3" placeholder="Aujourd'hui, je choisis de..."></textarea></div>
+        <div><label>3. Objectif clé :</label><textarea rows="3" placeholder="Je... avant..."></textarea></div>
+        <div><label>4. État d'esprit :</label><textarea rows="3" placeholder="Je me sens..."></textarea></div>
+        <div><label>5. Petit pas :</label><input type="text" placeholder="..." /></div>
+        <div><label>6. Note soir :</label><textarea rows="3" placeholder="Ce que j'ai appris..."></textarea></div>
       </div>
-      <button id="celebrateBtn">🎉 Célébrer la journée !</button>
+      <button id="celebrateBtn">🎉 Célébrer</button>
     </section>
-    <!-- Feuille de Route Hebdomadaire -->
-    <section id="hebdo" class="section">
+    <section class="section" id="hebdo">
       <h2>Feuille de Route Hebdomadaire</h2>
       <table>
-        <tr><th>Jour</th><th>Objectif principal</th><th>Tâches clés</th><th>Statut</th></tr>
-        <tr><td>Lundi</td><td><textarea rows="1"></text
-... (HTML truncated for brevity) ...
+        <tr><th>Jour</th><th>Objectif</th><th>Tâches</th><th>Statut</th></tr>
+        <tr><td>Lundi</td><td><textarea rows="1"></textarea></td><td><textarea rows="1"></textarea></td><td></td></tr>
+        <tr><td>Mardi</td><td><textarea rows="1"></textarea></td><td><textarea rows="1"></textarea></td><td></td></tr>
+        <tr><td>Mercredi</td><td><textarea rows="1"></textarea></td><td><textarea rows="1"></textarea></td><td></td></tr>
+        <tr><td>Jeudi</td><td><textarea rows="1"></textarea></td><td><textarea rows="1"></textarea></td><td></td></tr>
+        <tr><td>Vendredi</td><td><textarea rows="1"></textarea></td><td><textarea rows="1"></textarea></td><td></td></tr>
+        <tr><td>Samedi</td><td><textarea rows="1"></textarea></td><td><textarea rows="1"></textarea></td><td></td></tr>
+        <tr><td>Dimanche</td><td><textarea rows="1"></textarea></td><td><textarea rows="1"></textarea></td><td></td></tr>
+      </table>
+    </section>
+    <section class="section" id="mensuel">
+      <h2>Tableau de Bord Mensuel</h2>
+      <table>
+        <tr><th>Mois</th><th>Victoires</th><th>Leçons</th><th>Objectifs next</th></tr>
+        <tr><td><input type="text" placeholder="Ex: Juillet" /></td><td><textarea rows="2"></textarea></td><td><textarea rows="2"></textarea></td><td><textarea rows="2"></textarea></td></tr>
+      </table>
+    </section>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    const sections = document.querySelectorAll('.section');
+    const obs = new IntersectionObserver(entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')), { threshold: 0.3 });
+    sections.forEach(s => obs.observe(s));
+    document.getElementById('celebrateBtn').addEventListener('click', () => confetti({ particleCount: 80, spread: 60 }));
+  </script>
 </body>
 </html>
